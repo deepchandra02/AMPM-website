@@ -30,14 +30,20 @@ const Navbar = ({ toggle }) => {
         <Link to="/" className="p-4">
           Home
         </Link>
-        <Link to="/menu" className="p-4">
-          Menu
-        </Link>
         <Link to="/about" className="p-4">
           About
         </Link>
+        <Link to="/services" className="p-4">
+          Services
+        </Link>
+        <Link to="/projects" className="p-4">
+          Projects
+        </Link>
+        <Link to="/properties" className="p-4">
+          Properties
+        </Link>
         <Link to="/contact" className="p-4">
-          Contact
+          Contact Us
         </Link>
       </div>
     </nav>
