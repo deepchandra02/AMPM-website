@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../images/almadar-logo.jpg";
 
 const Navbar = () => {
@@ -9,8 +9,8 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   return (
-    <nav className="bg-white h-16 w-screen fixed drop-shadow-lg">
-      <div className="justify-around px-6">
+    <nav className="bg-white h-18 w-screen fixed drop-shadow-lg">
+      <div className="justify-around px-2 lg:px-10">
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div>
@@ -19,37 +19,78 @@ const Navbar = () => {
                 to="/"
                 className="flex items-center justify-start py-4 px-2"
               >
-                {/* cant' make responsive */}
-                <img className="h-8 w-auto md:h-15" src={Logo} alt="logo" />
-                <span className="font-montserrat text-gray-500 text-md">
-                  Property Management
+                <img className="h-14 w-auto" src={Logo} alt="logo" />
+                <span className="p-2 text-black font-montserrat">
+                  Property <br /> Management
                 </span>
               </Link>
             </div>
           </div>
           {/* <!-- Navbar items --> */}
-          <div className="hidden md:flex justify-end items-center space-x-5 ">
-            <Link to="/" className="nav-items">
+          <div className="hidden lg:flex justify-end items-center space-x-5 ">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple "
+                  : "nav-items"
+              }
+            >
               Home
-            </Link>
-            <Link to="/about" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               About
-            </Link>
-            <Link to="/services" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               Services
-            </Link>
-            <Link to="/projects" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               Projects
-            </Link>
-            <Link to="/properties" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/properties"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               Properties
-            </Link>
-            <Link to="/contact" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive
+                  ? "p-2 pt-1 pb-1 text-white font-montserrat transition duration-300 border-2 border-mpurple rounded-lg bg-mpurple"
+                  : "p-2 pt-1 pb-1 text-black font-montserrat transition duration-300 border-2 border-mpurple rounded-lg hover:bg-mpurple hover:text-white"
+              }
+            >
               Contact Us
-            </Link>
+            </NavLink>
           </div>
           {/* <!-- Mobile menu button --> */}
-          <div className="md:hidden flex items-center" onClick={handleClick}>
+          <div className="lg:hidden flex items-center" onClick={handleClick}>
             <button className="outline-none mobile-menu-button">
               <svg
                 className="w-8 h-8"
@@ -71,7 +112,6 @@ const Navbar = () => {
       </div>
 
       {/* <!-- mobile menu --> */}
-      {/* <div className={!nav ? "hidden" : "absolute bg-zinc-200 w-full px-8"}> */}
       <ul className={!nav ? "hidden" : "absolute bg-zinc-200 w-full px-8"}>
         <li className="border-b-2 border-zinc-300 w-full">
           <Link onClick={handleClose} to="/">
@@ -104,7 +144,6 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      {/* </div> */}
     </nav>
   );
 };
