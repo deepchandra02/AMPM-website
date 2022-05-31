@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../images/almadar-logo.jpg";
 
 const Navbar = () => {
@@ -28,27 +28,66 @@ const Navbar = () => {
           </div>
           {/* <!-- Navbar items --> */}
           <div className="hidden lg:flex justify-end items-center space-x-5 ">
-            <Link to="/" id="/" className="nav-items">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple "
+                  : "nav-items"
+              }
+            >
               Home
-            </Link>
-            <Link to="/about" id="about" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               About
-            </Link>
-            <Link to="/services" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               Services
-            </Link>
-            <Link to="/projects" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               Projects
-            </Link>
-            <Link to="/properties" className="nav-items">
+            </NavLink>
+            <NavLink
+              to="/properties"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-items underline decoration-mpurple decoration-1"
+                  : "nav-items"
+              }
+            >
               Properties
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/contact"
-              className="p-2 pt-1 pb-1 current text-black font-montserrat transition duration-300 border-2 border-mpurple rounded-lg hover:bg-mpurple hover:text-white"
+              className={({ isActive }) =>
+                isActive
+                  ? "p-2 pt-1 pb-1 text-white font-montserrat transition duration-300 border-2 border-mpurple rounded-lg bg-mpurple"
+                  : "p-2 pt-1 pb-1 text-black font-montserrat transition duration-300 border-2 border-mpurple rounded-lg hover:bg-mpurple hover:text-white"
+              }
             >
               Contact Us
-            </Link>
+            </NavLink>
           </div>
           {/* <!-- Mobile menu button --> */}
           <div className="lg:hidden flex items-center" onClick={handleClick}>
@@ -105,7 +144,6 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      {/* </div> */}
     </nav>
   );
 };

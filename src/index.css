@@ -12,5 +12,5 @@
 }
 
 .nav-items {
-  @apply p-2 text-black target:underline hover:underline decoration-mpurple decoration-1 font-montserrat transition duration-1000 hover:font-medium hover:text-mpurple 
+  @apply p-2 text-black decoration-mpurple decoration-1 font-montserrat transition hover:font-medium hover:text-mpurple 
 }
