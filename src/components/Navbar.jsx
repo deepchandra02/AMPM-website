@@ -112,36 +112,48 @@ const Navbar = () => {
       </div>
 
       {/* <!-- mobile menu --> */}
-      <ul className={!nav ? "hidden" : "absolute bg-zinc-200 w-full px-8"}>
-        <li className="border-b-2 border-zinc-300 w-full">
-          <Link onClick={handleClose} to="/">
+      <ul
+        className={
+          !nav ? "hidden" : "absolute bg-mgrey opacity-98 h-auto w-full px-8"
+        }
+      >
+        <li className="px-3 py-2">
+          <NavLink
+            onClick={handleClose}
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "w-full px-3 py-2 rounded text-mpurple bg-white items-center justify-center"
+                : "w-full px-3 py-2 rounded text-white items-center justify-center"
+            }
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
-        <li className="border-b-2 border-zinc-300 w-full">
-          <Link onClick={handleClose} to="/about">
+        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
+          <NavLink onClick={handleClose} to="/about">
             About
-          </Link>
+          </NavLink>
         </li>
-        <li className="border-b-2 border-zinc-300 w-full">
-          <Link onClick={handleClose} to="/services">
+        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
+          <NavLink onClick={handleClose} to="/services">
             Services
-          </Link>
+          </NavLink>
         </li>
-        <li className="border-b-2 border-zinc-300 w-full">
-          <Link onClick={handleClose} to="/projects">
+        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
+          <NavLink onClick={handleClose} to="/projects">
             Projects
-          </Link>
+          </NavLink>
         </li>
-        <li className="border-b-2 border-zinc-300 w-full">
-          <Link onClick={handleClose} to="/properties">
+        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
+          <NavLink onClick={handleClose} to="/properties">
             Properties
-          </Link>
+          </NavLink>
         </li>
-        <li className="border-b-2 border-zinc-300 w-full">
-          <Link onClick={handleClose} to="/contact">
+        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
+          <NavLink onClick={handleClose} to="/contact">
             Contact Us
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
