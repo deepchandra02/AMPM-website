@@ -1,12 +1,14 @@
-import React from 'react';
-import Content from '../components/Content';
-import Hero from '../components/Hero';
+import React from "react";
+import MV from "../components/MV";
+import AboutSection from "../components/AboutSection";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Content />
+      <AboutSection />
+      <MV/>
     </>
   );
 };
