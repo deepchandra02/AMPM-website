@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Hero />
       <AboutSection />
-      <MV/>
+      <MV />
     </>
   );
 };
