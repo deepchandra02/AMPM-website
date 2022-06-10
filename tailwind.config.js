@@ -10,6 +10,12 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat"],
       },
+      backgroundImage: {
+        hero: "url('./images/about_us_bg.svg')",
+      },
+      textUnderlineOffset: {
+        20: "20px",
+      },
     },
   },
   plugins: [],

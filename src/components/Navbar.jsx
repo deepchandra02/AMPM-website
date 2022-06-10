@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   return (
-    <nav className="bg-white h-18 w-screen fixed">
+    <nav className="bg-white h-18 w-screen fixed z-50">
       <div className="justify-around px-2 lg:px-10">
         <div className="flex justify-between">
           <div className="flex space-x-7">

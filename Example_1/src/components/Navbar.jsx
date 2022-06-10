@@ -1,20 +1,32 @@
 import React, { useState } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { NavLink } from "react-router-dom";
+import Logo from "../images/almadar-logo.jpg";
 
+import { Link } from "react-scroll";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const Navbar = () => {
+  // responsive toggle function
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
-
   const handleClose = () => setNav(!nav);
 
   return (
-    <div className="w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg">
+    <div className="w-screen h-[80px] z-10 bg-white fixed drop-shadow-lg">
       <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex items-center">
-          <h1 className="text-3xl font-bold mr-4 sm:text-4xl">BRAND.</h1>
-          <ul className="hidden md:flex">
+          <div>
+            {/* <!-- Website Logo --> */}
+            <Link to="/" className="flex items-center justify-start py-4 px-2">
+              <img className="h-14 w-auto" src={Logo} alt="logo" />
+              <span className="p-2 text-black font-montserrat">
+                Property <br /> Management
+              </span>
+            </Link>
+          </div>
+        </div>
+        <div className="hidden lg:flex justify-end items-center pr-4">
+          <ul className="hidden justify-between md:flex">
             <li>
               <Link to="home" smooth={true} duration={500}>
                 Home
@@ -42,13 +54,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="hidden md:flex pr-4">
-          <button className="border-none bg-transparent text-black mr-4">
-            Sign In
-          </button>
-          <button className="px-8 py-3">Sign Up</button>
-        </div>
-        <div className="md:hidden mr-4" onClick={handleClick}>
+
+        <div className="lg:hidden mr-4" onClick={handleClick}>
           {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}
         </div>
       </div>
@@ -103,13 +110,6 @@ const Navbar = () => {
             Pricing
           </Link>
         </li>
-
-        <div className="flex flex-col my-4">
-          <button className="bg-transparent text-indigo-600 px-8 py-3 mb-4">
-            Sign In
-          </button>
-          <button className="px-8 py-3">Sign Up</button>
-        </div>
       </ul>
     </div>
   );
