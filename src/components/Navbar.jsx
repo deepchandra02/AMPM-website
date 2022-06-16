@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../images/almadar-logo.jpg";
-
+import FB from "../images/facebook.png";
+import Insta from "../images/instagram.png";
+import Twitter from "../images/twitter.png";
+import Linkedin from "../images/linkedin.png";
 const Navbar = () => {
   // responsive toggle function
-  const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
-  const handleClose = () => setNav(!nav);
 
   return (
-    <nav className="bg-white h-18 w-screen fixed z-50">
+    <nav className="bg-white font-montserrat h-18 w-screen fixed z-50">
       <div className="justify-around px-2 lg:px-10">
         <div className="flex justify-between">
           <div className="flex space-x-7">
@@ -20,7 +20,7 @@ const Navbar = () => {
                 className="flex items-center justify-start py-4 px-2"
               >
                 <img className="h-14 w-auto" src={Logo} alt="logo" />
-                <span className="p-2 text-black font-montserrat">
+                <span className="p-2 text-black">
                   Property <br /> Management
                 </span>
               </Link>
@@ -89,73 +89,125 @@ const Navbar = () => {
               Contact Us
             </NavLink>
           </div>
-          {/* <!-- Mobile menu button --> */}
-          <div className="lg:hidden flex items-center" onClick={handleClick}>
-            <button className="outline-none mobile-menu-button">
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
+
+          {/* mobile menu */}
+          <button className="block lg:hidden py-3 px-4 mx-2 group">
+            {/* burger icon */}
+            <div className="rounded-full w-7 h-1 bg-mgrey mb-1"></div>
+            <div className="rounded-full w-7 h-1 bg-mgrey mb-1"></div>
+            <div className="rounded-full w-7 h-1 bg-mgrey mb-1"></div>
+
+            {/* mobile menu list */}
+            <div
+              className="absolute overflow-auto top-0 -right-full h-screen w-9/12 md:w-4/12 bg-mpurple text-white opacity-0
+      group-focus:right-0 group-focus:opacity-100 transition-all duration-300"
+            >
+              <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-8">
+                <li>
+                  <Link to="/" className="flex justify-start py-8 px-2">
+                    <img className="h-14 w-auto" src={Logo} alt="logo" />
+                    <span className="p-2 text-white text-left uppercase text-md">
+                      Property <br /> Management
+                    </span>
+                  </Link>
+                </li>
+
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "bg-mgrey py-4 px-6 w-full" : "py-4 px-6 w-full"
+                  }
+                >
+                  Home
+                </NavLink>
+
+                <div className="w-7/12 h-0.5 bg-white my-2"></div>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive ? "bg-mgrey py-4 px-6 w-full" : "py-4 px-6 w-full"
+                  }
+                >
+                  About
+                </NavLink>
+
+                <div className="w-7/12 h-0.5 bg-white my-2"></div>
+
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) =>
+                    isActive ? "bg-mgrey py-4 px-6 w-full" : "py-4 px-6 w-full"
+                  }
+                >
+                  Services
+                </NavLink>
+
+                <div className="w-7/12 h-0.5 bg-white my-2"></div>
+
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    isActive ? "bg-mgrey py-4 px-6 w-full" : "py-4 px-6 w-full"
+                  }
+                >
+                  Projects
+                </NavLink>
+
+                <div className="w-7/12 h-0.5 bg-white my-2"></div>
+
+                <NavLink
+                  to="/properties"
+                  className={({ isActive }) =>
+                    isActive ? "bg-mgrey py-4 px-6 w-full" : "py-4 px-6 w-full"
+                  }
+                >
+                  Properties
+                </NavLink>
+
+                <div className="w-7/12 h-0.5 bg-white my-2"></div>
+
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive ? "bg-mgrey py-4 px-6 w-full" : "py-4 px-6 w-full"
+                  }
+                >
+                  Contact Us
+                </NavLink>
+
+                <div className="w-7/12 h-0.5 bg-white my-2"></div>
+
+                <span className="flex flex-row justify-between items-center my-2">
+                  <a href="/">
+                    <img className="h-8 mx-2" src={FB} alt="facebook page" />
+                  </a>
+                  <a href="/">
+                    <img
+                      className="h-8 mx-2"
+                      src={Insta}
+                      alt="instagram page"
+                    />
+                  </a>
+                  <a href="/">
+                    <img
+                      className="h-8 mx-2"
+                      src={Twitter}
+                      alt="twitter page"
+                    />
+                  </a>
+                  <a href="/">
+                    <img
+                      className="h-8 mx-2"
+                      src={Linkedin}
+                      alt="linkedin page"
+                    />
+                  </a>
+                </span>
+              </ul>
+            </div>
+          </button>
         </div>
       </div>
-
-      {/* <!-- mobile menu --> */}
-      <ul
-        className={
-          !nav ? "hidden" : "absolute bg-mgrey opacity-98 h-auto w-full px-8"
-        }
-      >
-        <li className="px-3 py-2">
-          <NavLink
-            onClick={handleClose}
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "w-full px-3 py-2 rounded text-mpurple bg-white items-center justify-center"
-                : "w-full px-3 py-2 rounded text-white items-center justify-center"
-            }
-          >
-            Home
-          </NavLink>
-        </li>
-        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
-          <NavLink onClick={handleClose} to="/about">
-            About
-          </NavLink>
-        </li>
-        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
-          <NavLink onClick={handleClose} to="/services">
-            Services
-          </NavLink>
-        </li>
-        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
-          <NavLink onClick={handleClose} to="/projects">
-            Projects
-          </NavLink>
-        </li>
-        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
-          <NavLink onClick={handleClose} to="/properties">
-            Properties
-          </NavLink>
-        </li>
-        <li className="w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-black-900 hover:text-white">
-          <NavLink onClick={handleClose} to="/contact">
-            Contact Us
-          </NavLink>
-        </li>
-      </ul>
     </nav>
   );
 };
