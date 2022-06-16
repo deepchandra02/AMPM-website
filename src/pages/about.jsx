@@ -9,10 +9,10 @@ const About = () => {
         <img className="w-full h-full object-cover" src={aboutUsBg} alt="/" />
       </div>
 
-      <div className="max-w-[1240px] mx-auto text-white relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 relative gap-x-16 gap-y-16 px-4 py-20 font-montserrat">
+      <div className="max-w-[1240px] mx-auto text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 relative gap-x-16 px-4 py-32 font-montserrat">
           <div>
-            <h2 className="text-6xl font-bold pt-12 text-left ">
+            <h2 className="text-6xl font-bold pt-28 text-left ">
               <span class="inline-flex items-baseline underline underline-offset-20 ">
                 <span>Abou</span>
               </span>
@@ -21,7 +21,7 @@ const About = () => {
               </span>
             </h2>
 
-            <p className="py-24 text-2xl text-white text-justify">
+            <p className="py-24 text-lg text-white text-justify">
               Al Madar Property Management is a Qatari-based real estate and
               contracting firm that has been in business since 1992 and has a
               strong reputation for quality and service. The Company employs
@@ -32,7 +32,7 @@ const About = () => {
             </p>
           </div>
           <div className="bg-transparent text-white">
-            <div className="md:pl-12">
+            <div className="pt-10 md:pl-12">
               <img className="" src={hexagons} alt="/" />
             </div>
           </div>
