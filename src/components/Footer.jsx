@@ -47,43 +47,43 @@ const Footer = () => {
               </span>
               <span className="flex py-2">
                 <img className="h-4 w-auto mt-1" src={Time} alt="timings" />
-                <text
+                <span
                   href="/"
                   className="pl-2 text-white text-sm hover:text-mblue"
                 >
                   Office hours: Sun - Thu <br />
                   8am to 5pm
-                </text>
+                </span>
               </span>
               <span className="flex py-2">
                 <img className="h-4 w-auto mt-1" src={Phone} alt="telephone" />
-                <text
+                <span
                   href="/"
                   className="pl-2 text-white text-sm hover:text-mblue"
                 >
                   Call : +974 44675405
-                </text>
+                </span>
               </span>
               <span className="flex py-2">
                 <img className="h-4 w-auto mt-1" src={Email} alt="email" />
-                <text
+                <span
                   href="/"
                   className="pl-2 text-white text-sm hover:text-mblue"
                 >
                   realestate@almadar-holding
                   <br />
                   .com
-                </text>
+                </span>
               </span>
               <span className="flex py-2">
                 <img className="h-4 w-auto mt-1" src={Help} alt="help desk" />
-                <text
+                <span
                   href="/"
                   className="pl-2 text-white text-sm hover:text-mblue"
                 >
                   24/7 Help Desk <br />
                   +974 44671333
-                </text>
+                </span>
               </span>
             </div>
             <div className="flex flex-col">
