@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../images/almadar-logo.jpg";
+import Logo from "../components/images/almadar-logo.jpg";
 
 const Navbar = () => {
   // responsive toggle function
@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   return (
-    <nav className="bg-white h-18 w-screen fixed">
+    <nav className="bg-white h-18 w-screen fixed ">
       <div className="justify-around px-2 lg:px-10">
         <div className="flex justify-between">
           <div className="flex space-x-7">

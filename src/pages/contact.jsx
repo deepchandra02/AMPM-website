@@ -1,13 +1,13 @@
 import React from "react";
+import Section1 from "../components/contact/Section1";
 
 const Contact = () => {
   return (
-    <div>
-      <div className="h-screen flex justify-center items-center bg-yellow-300">
-        <h1 className="text-9xl uppercase font-black">Contact Us Page</h1>
-      </div>
-    </div>
+    <>
+      <Section1 />
+    </>
   );
 };
+
 
 export default Contact;
