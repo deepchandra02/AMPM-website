@@ -15,11 +15,24 @@
   @apply p-2 text-black decoration-mpurple decoration-1 font-montserrat transition hover:font-medium hover:text-mpurple;
 }
 
+.team-items-text {
+  @apply text-lg font-light lg:font-normal text-mpurple lg:text-4xl ml-7 lg:text-left;
+}
+
+.h-30vh {
+  height: 30vh;
+}
+
+.h-35vh {
+  height: 35vh;
+}
+
 .h-50vh {
   height: 50vh;
 }
+
 .bg-gradient {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: linear-gradient(111.35deg, #25215c 32.64%, #69c7ed 82.22%);
 }
